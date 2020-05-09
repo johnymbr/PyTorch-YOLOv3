@@ -100,7 +100,7 @@ if __name__ == "__main__":
         # Create plot
         img = np.array(Image.open(path))
         plt.figure()
-        fig, ax = plt.subplots(1)
+        fig, ax = plt.subplots(1, figsize=(12,9))
         ax.imshow(img)
 
         # Draw bounding boxes and labels of detections
@@ -119,7 +119,7 @@ if __name__ == "__main__":
 
                 color = bbox_colors[int(np.where(unique_labels == int(cls_pred))[0])]
                 # Create a Rectangle patch
-                bbox = patches.Rectangle((x1, y1), box_w, box_h, linewidth=2, edgecolor=color, facecolor="none")
+                bbox = patches.Rectangle((x1, y1), box_w, box_h, linewidth=1, edgecolor=color, facecolor="none")
                 # Add the bbox to the plot
                 ax.add_patch(bbox)
                 # Add label
@@ -137,5 +137,5 @@ if __name__ == "__main__":
         plt.gca().xaxis.set_major_locator(NullLocator())
         plt.gca().yaxis.set_major_locator(NullLocator())
         filename = path.split("/")[-1].split(".")[0]
-        plt.savefig(f"output/{filename}.png", bbox_inches="tight", pad_inches=0.0)
+        plt.savefig(f"output/{filename}.svg", format='svg', bbox_inches="tight", pad_inches=0.0, dpi=1200)
         plt.close()

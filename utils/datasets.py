@@ -43,8 +43,14 @@ class ImageFolder(Dataset):
 
     def __getitem__(self, index):
         img_path = self.files[index % len(self.files)]
+        # convert pgn to 'RGB'
+        if img_path.find(".png") != -1:
+            print(img_path)
+            img = Image.open(img_path).convert('RGB')
+        else:
+            img = Image.open(img_path)
         # Extract image as PyTorch tensor
-        img = transforms.ToTensor()(Image.open(img_path))
+        img = transforms.ToTensor()(img)
         # Pad to square resolution
         img, _ = pad_to_square(img, 0)
         # Resize
