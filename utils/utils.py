@@ -248,8 +248,13 @@ def non_max_suppression(prediction, conf_thres=0.5, nms_thres=0.4):
         detections = torch.cat((image_pred[:, :5], class_confs.float(), class_preds.float()), 1)
         # Perform non-maximum suppression
         keep_boxes = []
+        print(f"\n---- Entrando no detections. Size: {detections.size(0)}----")
         while detections.size(0):
             large_overlap = bbox_iou(detections[0, :4].unsqueeze(0), detections[:, :4]) > nms_thres
+            # https://github.com/eriklindernoren/PyTorch-YOLOv3/issues/315#issuecomment-545314342
+            if not any(large_overlap):
+                detections = np.delete(detections, 0, 0)
+                continue
             label_match = detections[0, -1] == detections[:, -1]
             # Indices of boxes with lower confidence scores, large IOUs and matching labels
             invalid = large_overlap & label_match
