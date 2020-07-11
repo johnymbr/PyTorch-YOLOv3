@@ -113,6 +113,7 @@ if __name__ == "__main__":
             for x1, y1, x2, y2, conf, cls_conf, cls_pred in detections:
 
                 print("\t+ Label: %s, Conf: %.5f" % (classes[int(cls_pred)], cls_conf.item()))
+                print("\t\t+ x1: %.5f, y1: %.5f, x2: %.5f, y2: %.5f" % (x1, y1, x2, y2))
 
                 box_w = x2 - x1
                 box_h = y2 - y1
