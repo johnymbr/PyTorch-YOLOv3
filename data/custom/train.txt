@@ -159,11 +159,6 @@ data/custom/images/GOPR4527-frame21700.jpg
 data/custom/images/GOPR4527-frame21800.jpg
 data/custom/images/GOPR4527-frame21900.jpg
 data/custom/images/GOPR4527-frame22000.jpg
-data/custom/images/GOPR4527-frame22100.jpg
-data/custom/images/GOPR4527-frame22200.jpg
-data/custom/images/GOPR4527-frame22400.jpg
-data/custom/images/GOPR4527-frame22500.jpg
-data/custom/images/GOPR4527-frame22600.jpg
 data/custom/images/GOPR4528-frame0.jpg
 data/custom/images/GOPR4528-frame200.jpg
 data/custom/images/GOPR4528-frame700.jpg

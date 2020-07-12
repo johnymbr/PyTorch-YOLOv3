@@ -8,3 +8,8 @@ data/custom/images/GOPR4527-frame900.jpg
 data/custom/images/GOPR4527-frame1000.jpg
 data/custom/images/GOPR4527-frame1100.jpg
 data/custom/images/GOPR4527-frame1200.jpg
+data/custom/images/GOPR4527-frame22100.jpg
+data/custom/images/GOPR4527-frame22200.jpg
+data/custom/images/GOPR4527-frame22400.jpg
+data/custom/images/GOPR4527-frame22500.jpg
+data/custom/images/GOPR4527-frame22600.jpg
