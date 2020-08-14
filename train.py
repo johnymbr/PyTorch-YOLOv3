@@ -75,7 +75,7 @@ if __name__ == "__main__":
     )
 
     # optimizer = torch.optim.Adam(model.parameters())
-    optimizer = torch.optim.SGD(model.parameters())
+    optimizer = torch.optim.SGD(model.parameters(), lr=.001, momentum=.9, weight_decay=5e-4)
 
     metrics = [
         "grid_size",
